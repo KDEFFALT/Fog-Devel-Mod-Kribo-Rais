@@ -1,4 +1,9 @@
 CONFIG_LOCALVERSION="-Mi680/Fog"
+##############################################
+# CONFIG LTO AND THINLTO
+CONFIG_LTO_CLANG=y
+CONFIG_THINLTO=y
+##############################################
 CONFIG_AUDIT=y
 # CONFIG_AUDITSYSCALL is not set
 CONFIG_NO_HZ=y
