@@ -1306,16 +1306,7 @@ static void hidg_unbind(struct usb_configuration *c, struct usb_function *f)
 {
 	struct f_hidg *hidg = func_to_hidg(f);
 
-<<<<<<< HEAD
-	hidg->bound = false;
-	wake_up(&hidg->read_queue);
-	wake_up(&hidg->write_queue);
-
-	device_destroy(hidg_class, MKDEV(major, hidg->minor));
-	cdev_del(&hidg->cdev);
-=======
 	cdev_device_del(&hidg->cdev, &hidg->dev);
->>>>>>> 4c10206e623f (Merge tag 'v4.19.289' of https://kernel.googlesource.com/pub/scm/linux/kernel/git/stable/linux-stable into fog-upstream)
 
 	usb_free_all_descriptors(f);
 }
